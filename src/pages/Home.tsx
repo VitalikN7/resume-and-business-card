@@ -1,3 +1,12 @@
+import { Layout } from "@widgets/Layout/Layout";
+import { AboutSection } from "./AboutSection";
+import { WorksSection } from "./WorksSection";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <Layout>
+      <AboutSection />
+      <WorksSection />
+    </Layout>
+  );
 };

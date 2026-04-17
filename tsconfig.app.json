@@ -13,7 +13,8 @@
       "@pages/*": ["./src/pages/*"],
       "@features/*": ["./src/features/*"],
       "@shared/*": ["./src/shared/*"],
-      "@widgets/*": ["./src/widgets/*"]
+      "@widgets/*": ["./src/widgets/*"],
+      "@assets/*": ["./src/assets/*"]
     },
 
     /* Bundler mode */
