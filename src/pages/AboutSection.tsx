@@ -1,6 +1,11 @@
-import { Box, Typography, Card, CardContent } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import { useSection } from "@shared/lib/SectionContext";
 import avatarImage from "@/assets/avatar.jpg";
+import { AboutContactsCard } from "./about/AboutContactsCard";
+import { AboutImpactGrid } from "./about/AboutImpactGrid";
+import { AboutProfilePanel } from "./about/AboutProfilePanel";
+import { AboutSkillsCard } from "./about/AboutSkillsCard";
 
 export const AboutSection = () => {
   const { activeSection } = useSection();
@@ -8,67 +13,97 @@ export const AboutSection = () => {
   if (activeSection !== "about") return null;
 
   return (
-    <Box>
-      <Typography variant="h2" sx={{ mb: 4 }}>
+    <Box
+      sx={{
+        color: "text.primary",
+        animation: "sectionReveal 720ms ease-out both",
+      }}>
+      <Typography
+        variant="overline"
+        sx={{
+          display: "inline-block",
+          mb: 3,
+          px: 2.2,
+          py: 0.8,
+          borderRadius: 999,
+          fontSize: { xs: "0.95rem", md: "1.05rem" },
+          fontWeight: 700,
+          lineHeight: 1,
+          letterSpacing: "0.14em",
+          color: "text.secondary",
+          bgcolor: "background.paper",
+          border: "1px solid",
+          borderColor: "divider",
+          animation: "cardReveal 560ms ease-out 120ms both",
+        }}>
         Обо мне
       </Typography>
 
-      <Box sx={{ display: "flex", gap: 4, flexWrap: { xs: "wrap", md: "nowrap" } }}>
-        {/* Левая колонка - информация (60%) */}
-        <Box sx={{ flex: { xs: "1 1 100%", md: "0 0 60%" } }}>
-          <Card sx={{ mb: 3 }}>
-            <CardContent>
-              <Typography variant="h5" sx={{ mb: 2 }}>
-                Привет! 👋
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-                Я разработчик с опытом создания веб-приложений. Специализируюсь на
-                фронтенд-разработке с использованием React, TypeScript и современных
-                инструментов.
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-                Люблю писать чистый код, решать сложные задачи и постоянно учиться новым
-                технологиям.
-              </Typography>
-            </CardContent>
-          </Card>
+      <AboutImpactGrid />
 
-          <Card>
-            <CardContent>
-              <Typography variant="h5" sx={{ mb: 2 }}>
-                Навыки
-              </Typography>
-              <Typography component="ul" sx={{ pl: 2 }}>
-                <li>React, TypeScript, JavaScript</li>
-                <li>Material-UI, CSS, Tailwind</li>
-                <li>REST API, GraphQL</li>
-                <li>Git, Docker</li>
-              </Typography>
-            </CardContent>
-          </Card>
+      <Box
+        sx={{
+          display: "grid",
+          gap: 3,
+          gridTemplateColumns: { xs: "1fr", lg: "minmax(0, 1.45fr) minmax(320px, 0.9fr)" },
+          alignItems: "flex-start",
+        }}>
+        <Box sx={{ animation: "cardReveal 700ms ease-out 220ms both" }}>
+          <AboutProfilePanel />
         </Box>
 
-        {/* Правая колонка - фото (40%) */}
         <Box
           sx={{
-            flex: { xs: "1 1 100%", md: "0 0 40%" },
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-start",
+            animation: "cardReveal 760ms ease-out 320ms both",
           }}>
-          <Card sx={{ width: "100%", overflow: "hidden" }}>
+          <Box sx={{ width: "100%", display: "grid", gap: 2.5 }}>
             <Box
-              component="img"
-              src={avatarImage}
-              alt="Аватар"
               sx={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-                objectFit: "cover",
-              }}
-            />
-          </Card>
+                display: "grid",
+                gap: 2.5,
+                gridTemplateColumns: { xs: "1fr", md: "minmax(150px, 180px) 1fr" },
+                alignItems: "stretch",
+              }}>
+              <Card
+                sx={(theme) => ({
+                  width: "100%",
+                  overflow: "hidden",
+                  background: `linear-gradient(160deg, ${alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.12 : 0.2)} 0%, ${alpha(theme.palette.background.paper, 0.96)} 42%, ${alpha(theme.palette.success.main, theme.palette.mode === "light" ? 0.1 : 0.18)} 100%)`,
+                  alignSelf: "start",
+                  border: "1px solid",
+                  borderColor: alpha(theme.palette.divider, 0.8),
+                  boxShadow:
+                    theme.palette.mode === "light"
+                      ? "0 18px 40px rgba(18, 38, 63, 0.12)"
+                      : "0 18px 40px rgba(0, 0, 0, 0.32)",
+                  transition: "transform 220ms ease, box-shadow 220ms ease",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    boxShadow:
+                      theme.palette.mode === "light"
+                        ? "0 22px 48px rgba(18, 38, 63, 0.16)"
+                        : "0 22px 48px rgba(0, 0, 0, 0.4)",
+                  },
+                })}>
+                <Box
+                  component="img"
+                  src={avatarImage}
+                  alt="Аватар"
+                  sx={{
+                    width: "100%",
+                    aspectRatio: { xs: "4 / 5", md: "3 / 4" },
+                    display: "block",
+                    objectFit: "cover",
+                    transform: "scale(1.01)",
+                  }}
+                />
+              </Card>
+
+              <AboutContactsCard compact />
+            </Box>
+
+            <AboutSkillsCard compact />
+          </Box>
         </Box>
       </Box>
     </Box>
