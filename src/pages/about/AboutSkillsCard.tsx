@@ -6,20 +6,23 @@ const skills = [
   "CSS",
   "SCSS",
   "JavaScript",
-  "Webpack",
-  "Vite",
   "TypeScript",
-  "Docker",
-  "Git",
-  "React",
-  "Next.js",
+  "React 18+",
+  "Vite 4+",
+  "Webpack",
+  "Next.js 14+",
   "NestJS",
   "Redux",
+  "RTK Query",
+  "Zustand",
+  "Tanstack Query",
+  "MUI 5+",
   "WebSocket",
   "REST API",
   "Node.js",
+  "Docker",
+  "Git",
   "CI/CD",
-  "API",
 ];
 
 interface AboutSkillsCardProps {
@@ -48,10 +51,16 @@ export const AboutSkillsCard = ({ compact = false }: AboutSkillsCardProps) => {
         },
       })}>
       <CardContent sx={{ p: compact ? 2 : 3, "&:last-child": { pb: compact ? 2 : 3 } }}>
-        <Typography variant={compact ? "h6" : "h5"} sx={{ mb: compact ? 1.5 : 2, color: "text.primary" }}>
+        <Typography
+          variant={compact ? "h6" : "h5"}
+          sx={{ mb: compact ? 1.5 : 2, color: "text.primary" }}>
           Навыки
         </Typography>
-        <Stack direction="row" spacing={compact ? 0.75 : 1} useFlexGap sx={{ flexWrap: "wrap" }}>
+        <Stack
+          direction="row"
+          spacing={compact ? 0.75 : 1}
+          useFlexGap
+          sx={{ flexWrap: "wrap" }}>
           {skills.map((skill) => (
             <Chip
               key={skill}
@@ -60,8 +69,14 @@ export const AboutSkillsCard = ({ compact = false }: AboutSkillsCardProps) => {
               size={compact ? "small" : "medium"}
               sx={(theme) => ({
                 height: compact ? 28 : 32,
-                borderColor: alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.18 : 0.32),
-                bgcolor: alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.04 : 0.1),
+                borderColor: alpha(
+                  theme.palette.primary.main,
+                  theme.palette.mode === "light" ? 0.18 : 0.32,
+                ),
+                bgcolor: alpha(
+                  theme.palette.primary.main,
+                  theme.palette.mode === "light" ? 0.04 : 0.1,
+                ),
                 transition: "transform 180ms ease, background-color 180ms ease",
                 "& .MuiChip-label": {
                   px: compact ? 1 : 1.25,
@@ -69,7 +84,10 @@ export const AboutSkillsCard = ({ compact = false }: AboutSkillsCardProps) => {
                 },
                 "&:hover": {
                   transform: "translateY(-1px)",
-                  bgcolor: alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.08 : 0.16),
+                  bgcolor: alpha(
+                    theme.palette.primary.main,
+                    theme.palette.mode === "light" ? 0.08 : 0.16,
+                  ),
                 },
               })}
             />

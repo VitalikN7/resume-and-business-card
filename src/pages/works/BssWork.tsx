@@ -5,7 +5,7 @@ const bssWork: WorkExperience = {
   company: "BSS",
   project: "ИТ-аутсорсинг",
   role: "Fullstack-разработчик",
-  period: "Октябрь 2019 — Март 2022 (2 года и 6 месяцев)",
+  period: "Октябрь 2019 — Март 2021 (1 год и 6 месяцев)",
   summary:
     "Разрабатывал full-stack приложения: frontend на React/Next.js и backend на Express/NestJS с SQL и NoSQL базами данных.",
   highlights: ["SEO +35%", "Top-10 по 20+ запросам", "SQL 3 с → 200 мс", "QA fixes -40%"],
@@ -16,7 +16,7 @@ const bssWork: WorkExperience = {
         "Проектировал архитектуру приложения в NestJS: модули, контроллеры, сервисы, dependency injection, guards и interceptors.",
         "Реализовывал REST API на Express.js и NestJS для 3 проектов: аутентификация, CRUD-операции и обработка файлов.",
         "Оптимизировал SQL-запросы в PostgreSQL через индексы, EXPLAIN ANALYZE и денормализацию: ускорил критические выборки с 3 с до 200 мс.",
-        "Использовал Sequelize, Prisma и Mongoose для схем, миграций и связей между таблицами.",
+        "Использовал Sequelize и Prisma для схем, миграций и связей между таблицами.",
       ],
     },
     {
@@ -36,19 +36,19 @@ const bssWork: WorkExperience = {
       ],
     },
     {
+      title: "Реализовал сложные интерфейсы с картами",
+      items: [
+        "Реализовал карту с кластеризацией нескольких тысяч объектов и отображением состояния доставки.",
+        "Провел оптимизацию рендеринга и взаимодействия с картой, снизив время загрузки с 5 с до 500 мс.",
+        "Результат: снижение количества багов на 40% и ускорение обработки обращений в поддержку.",
+      ],
+    },
+    {
       title: "Обеспечил Pixel Perfect верстку",
       items: [
         "Реализовал адаптивные интерфейсы по макетам Figma для 5 проектов: desktop, tablet и mobile от 320px.",
         "Применил семантичную верстку и accessibility best practices уровня WCAG 2.1 AA.",
         "Результат: снижение времени на внесение правок после QA на 40%.",
-      ],
-    },
-    {
-      title: "Менторство и code review",
-      items: [
-        "Проводил еженедельные code review для 2 junior-разработчиков.",
-        "Обучал best practices: React patterns, TypeScript и работе с асинхронностью.",
-        "Результат: ускорение роста junior-разработчиков до middle-уровня на 4 месяца быстрее среднего.",
       ],
     },
   ],
@@ -62,7 +62,7 @@ const bssWork: WorkExperience = {
     "HTML5",
     "CSS3",
     "PostgreSQL",
-    "MongoDB",
+    "SQLite",
     "Redux Toolkit",
     "Material UI",
     "Tailwind CSS",

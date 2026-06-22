@@ -60,20 +60,46 @@ export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
       <Toolbar
         component={Container}
         maxWidth="lg"
-        sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 2 }}>
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: "space-between",
+          alignItems: { xs: "stretch", sm: "center" },
+          gap: { xs: 1, sm: 2 },
+          py: { xs: 1, sm: 0 },
+        }}>
         <Box>
-          <Box sx={{ fontWeight: 800, fontSize: { xs: "1.2rem", md: "1.45rem" }, letterSpacing: "-0.03em" }}>
+          <Box
+            sx={{
+              fontWeight: 800,
+              fontSize: { xs: "1.2rem", md: "1.45rem" },
+              letterSpacing: "-0.03em",
+            }}>
             Портфолио
           </Box>
-          <Box sx={{ color: "text.secondary", fontSize: "0.82rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          <Box
+            sx={{
+              color: "text.secondary",
+              fontSize: "0.82rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}>
             Frontend / Fullstack
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", gap: 1.25, alignItems: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: { xs: 0.5, sm: 1.25 },
+            alignItems: "center",
+            minWidth: 0,
+          }}>
           <Box
             sx={(theme) => ({
-              display: "inline-flex",
+              display: "flex",
+              flex: { xs: 1, sm: "0 0 auto" },
+              minWidth: 0,
               gap: 0.75,
               p: 0.5,
               borderRadius: 999,
@@ -91,13 +117,17 @@ export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
               onClick={() => onSectionChange("about")}
               sx={(theme) => ({
                 color: activeSection === "about" ? "common.white" : "text.secondary",
-                fontSize: "0.98rem",
+                flex: { xs: 1, sm: "0 0 auto" },
+                fontSize: { xs: "0.875rem", sm: "0.98rem" },
                 fontWeight: 700,
                 textTransform: "none",
-                minWidth: { xs: 112, md: 128 },
+                minWidth: { xs: 0, sm: 112, md: 128 },
                 borderRadius: 999,
-                px: 1.8,
+                px: { xs: 1, sm: 1.8 },
                 py: 0.9,
+                "& .MuiButton-startIcon": {
+                  mr: { xs: 0.5, sm: 1 },
+                },
                 ...(activeSection === "about"
                   ? {
                       background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
@@ -109,7 +139,8 @@ export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
                   activeSection === "about"
                     ? "0 10px 24px rgba(25, 118, 210, 0.28)"
                     : "none",
-                transition: "background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease",
+                transition:
+                  "background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease",
                 "&:hover": {
                   ...(activeSection === "about"
                     ? {
@@ -133,13 +164,17 @@ export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
               onClick={() => onSectionChange("works")}
               sx={(theme) => ({
                 color: activeSection === "works" ? "common.white" : "text.secondary",
-                fontSize: "0.98rem",
+                flex: { xs: 1, sm: "0 0 auto" },
+                fontSize: { xs: "0.875rem", sm: "0.98rem" },
                 fontWeight: 700,
                 textTransform: "none",
-                minWidth: { xs: 112, md: 128 },
+                minWidth: { xs: 0, sm: 112, md: 128 },
                 borderRadius: 999,
-                px: 1.8,
+                px: { xs: 1, sm: 1.8 },
                 py: 0.9,
+                "& .MuiButton-startIcon": {
+                  mr: { xs: 0.5, sm: 1 },
+                },
                 ...(activeSection === "works"
                   ? {
                       background: `linear-gradient(135deg, ${theme.palette.success.main}, ${theme.palette.success.dark})`,
@@ -151,7 +186,8 @@ export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
                   activeSection === "works"
                     ? "0 10px 24px rgba(46, 125, 50, 0.28)"
                     : "none",
-                transition: "background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease",
+                transition:
+                  "background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease",
                 "&:hover": {
                   ...(activeSection === "works"
                     ? {

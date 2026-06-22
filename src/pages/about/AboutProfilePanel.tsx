@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Link, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import { alpha } from "@mui/material/styles";
 
 export const AboutProfilePanel = () => {
@@ -32,7 +32,8 @@ export const AboutProfilePanel = () => {
               : "0 24px 52px rgba(0, 0, 0, 0.42)",
         },
       })}>
-      <CardContent sx={{ p: { xs: 2.5, md: 3.25 }, "&:last-child": { pb: { xs: 2.5, md: 3.25 } } }}>
+      <CardContent
+        sx={{ p: { xs: 2.5, md: 3.25 }, "&:last-child": { pb: { xs: 2.5, md: 3.25 } } }}>
         <Typography variant="h5" sx={{ mb: 1.5, color: "text.primary" }}>
           Коротко обо мне
         </Typography>
@@ -50,9 +51,15 @@ export const AboutProfilePanel = () => {
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 color: "text.secondary",
-                bgcolor: alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.08 : 0.16),
+                bgcolor: alpha(
+                  theme.palette.primary.main,
+                  theme.palette.mode === "light" ? 0.08 : 0.16,
+                ),
                 border: "1px solid",
-                borderColor: alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.16 : 0.3),
+                borderColor: alpha(
+                  theme.palette.primary.main,
+                  theme.palette.mode === "light" ? 0.16 : 0.3,
+                ),
               })}>
               {item}
             </Box>
@@ -77,19 +84,20 @@ export const AboutProfilePanel = () => {
         <Box component="ul" sx={{ pl: 3, mb: 2.5, color: "text.primary" }}>
           <li>
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Спроектировал и развиваю продукт с нуля на React 18 + TypeScript + FSD.
+              Проектировал и развиваю продукты с нуля на React 18 + TypeScript + FSD.
             </Typography>
           </li>
           <li>
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Имею практический опыт с Next.js 14+ (App Router, SSR/SSG) для улучшения SEO и
-              производительности.
+              Имею практический опыт с Next.js 14+ (App Router, SSR/SSG) для улучшения SEO
+              и производительности.
             </Typography>
           </li>
           <li>
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Вывел LCP с 12-14 с до 3.0-3.5 с на 3G за счет lazy loading и виртуализации
-              списков.
+              Реализовывал data-heavy интерфейсы с пагинацией, фильтрацией, сортировкой,
+              сложными состояниями загрузки, CRM-модули, role-based сценарии и адаптацией
+              под реальные бизнес-сценарии.
             </Typography>
           </li>
         </Box>
@@ -129,27 +137,6 @@ export const AboutProfilePanel = () => {
               понятной и поддерживаемой.
             </Typography>
           </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Делал сайты под ключ:{" "}
-              <Link href="https://www.shcider.com" target="_blank" rel="noreferrer" underline="hover">
-                shcider.com
-              </Link>{" "}
-              ,{" "}
-              <Link
-                href="https://www.rusintertrans.com"
-                target="_blank"
-                rel="noreferrer"
-                underline="hover">
-                rusintertrans.com
-              </Link>
-              {" "}и{" "}
-              <Link href="https://www.viroom.ru" target="_blank" rel="noreferrer" underline="hover">
-                viroom.ru
-              </Link>
-              .
-            </Typography>
-          </li>
         </Box>
 
         <Typography
@@ -164,11 +151,6 @@ export const AboutProfilePanel = () => {
           Что важно в работе
         </Typography>
         <Box component="ul" sx={{ pl: 3, color: "text.primary" }}>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Чистота кода и адекватная обратная связь.
-            </Typography>
-          </li>
           <li>
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
               Сильная команда с понятными процессами разработки.
