@@ -15,11 +15,12 @@ import {
   PersonRounded,
   WorkHistoryRounded,
 } from "@mui/icons-material";
+import type { SectionId } from "@shared/lib/SectionContext";
 import { useThemeMode } from "@shared/lib/ThemeContext";
 
 interface HeaderProps {
-  activeSection: "about" | "works";
-  onSectionChange: (section: "about" | "works") => void;
+  activeSection: SectionId;
+  onSectionChange: (section: SectionId) => void;
 }
 
 export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
@@ -37,7 +38,7 @@ export const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
   };
 
   const getThemeLabel = () => {
-    const labels: Record<string, string> = {
+    const labels: Record<typeof themeMode, string> = {
       light: "Светлая тема",
       dark: "Темная тема",
       system: "Системная тема",

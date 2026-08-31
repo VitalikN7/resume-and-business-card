@@ -1,7 +1,5 @@
-//* react
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-//* app
 import { App } from "@app/App";
 import "@app/styles/global.css";
 

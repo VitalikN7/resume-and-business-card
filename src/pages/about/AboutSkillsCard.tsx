@@ -1,29 +1,6 @@
 import { Card, CardContent, Chip, Stack, Typography } from "@mui/material";
 import { alpha } from "@mui/material/styles";
-
-const skills = [
-  "HTML",
-  "CSS",
-  "SCSS",
-  "JavaScript",
-  "TypeScript",
-  "React 18+",
-  "Vite 4+",
-  "Webpack",
-  "Next.js 14+",
-  "NestJS",
-  "Redux",
-  "RTK Query",
-  "Zustand",
-  "Tanstack Query",
-  "MUI 5+",
-  "WebSocket",
-  "REST API",
-  "Node.js",
-  "Docker",
-  "Git",
-  "CI/CD",
-];
+import { skills } from "./aboutData";
 
 interface AboutSkillsCardProps {
   compact?: boolean;

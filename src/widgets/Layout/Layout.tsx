@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { Box, Container } from "@mui/material";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { useSection } from "@shared/lib/SectionContext";
 
 interface LayoutProps {
@@ -18,11 +17,6 @@ export const Layout = ({ children }: LayoutProps) => {
       <Box component="main" sx={{ flex: 1, py: 4 }}>
         <Container maxWidth="lg">{children}</Container>
       </Box>
-
-      <Footer />
     </Box>
   );
 };
-
-export { Header, Footer };
-export type { LayoutProps };

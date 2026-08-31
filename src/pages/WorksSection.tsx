@@ -1,8 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useSection } from "@shared/lib/SectionContext";
-import { ViroomWork } from "./works/ViroomWork";
-import { NbkWork } from "./works/NBKWork";
-import { IflexWork } from "./works/IFlexWork";
+import { WorkExperienceCard } from "./works/WorkExperienceCard";
+import { workExperience } from "./works/workExperienceData";
 
 export const WorksSection = () => {
   const { activeSection } = useSection();
@@ -32,9 +31,9 @@ export const WorksSection = () => {
       </Typography>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-        <ViroomWork />
-        <IflexWork />
-        <NbkWork />
+        {workExperience.map(({ delayMs, ...work }) => (
+          <WorkExperienceCard key={work.company} work={work} delayMs={delayMs} />
+        ))}
       </Box>
     </Box>
   );

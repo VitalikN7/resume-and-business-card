@@ -1,20 +1,14 @@
-//* providers
 import { Box } from "@mui/material";
-import { ThemeContextProvider } from "@shared/lib/ThemeContext";
-import { SectionProvider } from "@shared/lib/SectionContext";
-import { ThemeProvider } from "./providers/theme/ThemeProvider";
-import { RouterProvider } from "./providers/router/RouterProvider";
+import { RouterProvider } from "react-router";
+import { AppProviders } from "./AppProviders";
+import { router } from "./router";
 
 export const App = () => {
   return (
-    <ThemeContextProvider>
-      <ThemeProvider>
-        <SectionProvider>
-          <Box sx={{ backgroundColor: "background.default", minHeight: "100vh" }}>
-            <RouterProvider />
-          </Box>
-        </SectionProvider>
-      </ThemeProvider>
-    </ThemeContextProvider>
+    <AppProviders>
+      <Box sx={{ backgroundColor: "background.default", minHeight: "100vh" }}>
+        <RouterProvider router={router} />
+      </Box>
+    </AppProviders>
   );
 };

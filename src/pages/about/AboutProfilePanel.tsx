@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { alpha } from "@mui/material/styles";
+import { profileSections, profileTags } from "./aboutData";
 
 export const AboutProfilePanel = () => {
   return (
@@ -39,127 +40,63 @@ export const AboutProfilePanel = () => {
         </Typography>
 
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 1.5 }}>
-          {["5+ лет", "React", "Next.js", "TypeScript", "Node.js", "NestJS"].map(
-            (item) => (
-              <Box
-                key={item}
-                sx={(theme) => ({
-                  px: 1.25,
-                  py: 0.5,
-                  borderRadius: 999,
-                  fontSize: "0.78rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  color: "text.secondary",
-                  bgcolor: alpha(
-                    theme.palette.primary.main,
-                    theme.palette.mode === "light" ? 0.08 : 0.16,
-                  ),
-                  border: "1px solid",
-                  borderColor: alpha(
-                    theme.palette.primary.main,
-                    theme.palette.mode === "light" ? 0.16 : 0.3,
-                  ),
-                })}>
-                {item}
-              </Box>
-            ),
-          )}
+          {profileTags.map((item) => (
+            <Box
+              key={item}
+              sx={(theme) => ({
+                px: 1.25,
+                py: 0.5,
+                borderRadius: 999,
+                fontSize: "0.78rem",
+                fontWeight: 700,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "text.secondary",
+                bgcolor: alpha(
+                  theme.palette.primary.main,
+                  theme.palette.mode === "light" ? 0.08 : 0.16,
+                ),
+                border: "1px solid",
+                borderColor: alpha(
+                  theme.palette.primary.main,
+                  theme.palette.mode === "light" ? 0.16 : 0.3,
+                ),
+              })}>
+              {item}
+            </Box>
+          ))}
         </Box>
 
         <Typography variant="h6" sx={{ mb: 1.5, color: "text.primary", fontWeight: 700 }}>
           Frontend / Fullstack - разработчик с опытом более 5 лет
         </Typography>
 
-        <Typography
-          variant="subtitle2"
-          sx={{
-            mb: 1,
-            color: "text.secondary",
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-          }}>
-          Ключевой опыт
-        </Typography>
-        <Box component="ul" sx={{ pl: 3, mb: 2.5, color: "text.primary" }}>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Проектировал и развиваю продукты с нуля на React 18 + TypeScript + FSD.
+        {profileSections.map((section, index) => (
+          <Box
+            key={section.title}
+            sx={{ mb: index === profileSections.length - 1 ? 0 : 2.5 }}>
+            <Typography
+              variant="subtitle2"
+              sx={{
+                mb: 1,
+                color: "text.secondary",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+              }}>
+              {section.title}
             </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Имею практический опыт с Next.js 14+ (App Router, SSR/SSG) для улучшения SEO
-              и производительности.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Реализовывал data-heavy интерфейсы с пагинацией, фильтрацией, сортировкой,
-              сложными состояниями загрузки, CRM-модули, role-based сценарии и адаптацией
-              под реальные бизнес-сценарии.
-            </Typography>
-          </li>
-        </Box>
-
-        <Typography
-          variant="subtitle2"
-          sx={{
-            mb: 1,
-            color: "text.secondary",
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-          }}>
-          Техническая база
-        </Typography>
-        <Box component="ul" sx={{ pl: 3, mb: 2.5, color: "text.primary" }}>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Выстраиваю и поддерживаю процессы контроля качества: автотесты на Jest +
-              React Testing Library, quality gates в CI/CD и контроль регрессий перед
-              релизом.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Проектировал и поддерживал серверную логику на Express и NestJS, поэтому
-              эффективно выстраиваю взаимодействие фронтенда с бэкендом.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Работаю по Agile/Scrum, пишу техническую документацию, настраиваю CI/CD и
-              Docker-контейнеризацию.
-            </Typography>
-          </li>
-        </Box>
-
-        <Typography
-          variant="subtitle2"
-          sx={{
-            mb: 1,
-            color: "text.secondary",
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-          }}>
-          Что важно в работе
-        </Typography>
-        <Box component="ul" sx={{ pl: 3, color: "text.primary" }}>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Сильная команда с понятными процессами разработки.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Интересные задачи и возможность профессионального роста.
-            </Typography>
-          </li>
-        </Box>
+            <Box component="ul" sx={{ pl: 3, color: "text.primary" }}>
+              {section.items.map((item) => (
+                <li key={item}>
+                  <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+                    {item}
+                  </Typography>
+                </li>
+              ))}
+            </Box>
+          </Box>
+        ))}
       </CardContent>
     </Card>
   );
