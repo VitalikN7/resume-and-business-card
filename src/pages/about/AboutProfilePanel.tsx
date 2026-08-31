@@ -39,35 +39,37 @@ export const AboutProfilePanel = () => {
         </Typography>
 
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 1.5 }}>
-          {["6+ лет", "React", "TypeScript", "Next.js", "NestJS"].map((item) => (
-            <Box
-              key={item}
-              sx={(theme) => ({
-                px: 1.25,
-                py: 0.5,
-                borderRadius: 999,
-                fontSize: "0.78rem",
-                fontWeight: 700,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "text.secondary",
-                bgcolor: alpha(
-                  theme.palette.primary.main,
-                  theme.palette.mode === "light" ? 0.08 : 0.16,
-                ),
-                border: "1px solid",
-                borderColor: alpha(
-                  theme.palette.primary.main,
-                  theme.palette.mode === "light" ? 0.16 : 0.3,
-                ),
-              })}>
-              {item}
-            </Box>
-          ))}
+          {["5+ лет", "React", "Next.js", "TypeScript", "Node.js", "NestJS"].map(
+            (item) => (
+              <Box
+                key={item}
+                sx={(theme) => ({
+                  px: 1.25,
+                  py: 0.5,
+                  borderRadius: 999,
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: "text.secondary",
+                  bgcolor: alpha(
+                    theme.palette.primary.main,
+                    theme.palette.mode === "light" ? 0.08 : 0.16,
+                  ),
+                  border: "1px solid",
+                  borderColor: alpha(
+                    theme.palette.primary.main,
+                    theme.palette.mode === "light" ? 0.16 : 0.3,
+                  ),
+                })}>
+                {item}
+              </Box>
+            ),
+          )}
         </Box>
 
         <Typography variant="h6" sx={{ mb: 1.5, color: "text.primary", fontWeight: 700 }}>
-          Fullstack-разработчик с опытом более 6 лет
+          Frontend / Fullstack - разработчик с опытом более 5 лет
         </Typography>
 
         <Typography
@@ -116,7 +118,9 @@ export const AboutProfilePanel = () => {
         <Box component="ul" sx={{ pl: 3, mb: 2.5, color: "text.primary" }}>
           <li>
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              Поддерживаю 85%+ покрытие тестами (Jest + RTL) и quality gate в CI/CD.
+              Выстраиваю и поддерживаю процессы контроля качества: автотесты на Jest +
+              React Testing Library, quality gates в CI/CD и контроль регрессий перед
+              релизом.
             </Typography>
           </li>
           <li>
@@ -129,12 +133,6 @@ export const AboutProfilePanel = () => {
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
               Работаю по Agile/Scrum, пишу техническую документацию, настраиваю CI/CD и
               Docker-контейнеризацию.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-              В разработке придерживаюсь принципов SOLID и стараюсь держать кодовую базу
-              понятной и поддерживаемой.
             </Typography>
           </li>
         </Box>

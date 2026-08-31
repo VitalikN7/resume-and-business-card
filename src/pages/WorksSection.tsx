@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { useSection } from "@shared/lib/SectionContext";
-import { ApartmentMarketplaceWork } from "./works/ApartmentMarketplaceWork";
-import { BssWork } from "./works/BssWork";
-import { MtsWork } from "./works/MtsWork";
+import { ViroomWork } from "./works/ViroomWork";
+import { NbkWork } from "./works/NBKWork";
+import { IflexWork } from "./works/IFlexWork";
 
 export const WorksSection = () => {
   const { activeSection } = useSection();
@@ -32,9 +32,9 @@ export const WorksSection = () => {
       </Typography>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-        <ApartmentMarketplaceWork />
-        <MtsWork />
-        <BssWork />
+        <ViroomWork />
+        <IflexWork />
+        <NbkWork />
       </Box>
     </Box>
   );

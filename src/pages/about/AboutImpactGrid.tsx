@@ -8,18 +8,18 @@ import BoltRounded from "@mui/icons-material/BoltRounded";
 const impactItems = [
   {
     icon: <BusinessCenterRounded fontSize="small" />,
-    value: "6+ лет",
+    value: "5+ лет",
     label: "коммерческой разработки",
   },
   {
     icon: <BoltRounded fontSize="small" />,
-    value: "3.0–3.5 с",
-    label: "LCP после оптимизации",
+    value: "Архитектура",
+    label: "FSD, микрофронтенды, UI Kit",
   },
   {
     icon: <VerifiedRounded fontSize="small" />,
-    value: "85%+",
-    label: "покрытие тестами",
+    value: "Работа с API",
+    label: "RTK Query, Zustand, формы, REST API",
   },
   {
     icon: <QueryStatsRounded fontSize="small" />,
@@ -39,7 +39,9 @@ export const AboutImpactGrid = () => {
         animation: "cardReveal 620ms ease-out 200ms both",
       }}>
       {impactItems.map((item, index) => (
-        <Box key={item.value} sx={{ animation: `cardReveal 620ms ease-out ${260 + index * 90}ms both` }}>
+        <Box
+          key={item.value}
+          sx={{ animation: `cardReveal 620ms ease-out ${260 + index * 90}ms both` }}>
           <Card
             sx={(theme) => ({
               position: "relative",
@@ -73,7 +75,10 @@ export const AboutImpactGrid = () => {
                   mb: 1.25,
                   borderRadius: 999,
                   color: "primary.main",
-                  bgcolor: alpha(theme.palette.primary.main, theme.palette.mode === "light" ? 0.1 : 0.18),
+                  bgcolor: alpha(
+                    theme.palette.primary.main,
+                    theme.palette.mode === "light" ? 0.1 : 0.18,
+                  ),
                 })}>
                 {item.icon}
               </Box>
@@ -81,7 +86,9 @@ export const AboutImpactGrid = () => {
               <Typography variant="h6" sx={{ fontWeight: 800, lineHeight: 1.1 }}>
                 {item.value}
               </Typography>
-              <Typography variant="body2" sx={{ mt: 0.5, color: "text.secondary", lineHeight: 1.5 }}>
+              <Typography
+                variant="body2"
+                sx={{ mt: 0.5, color: "text.secondary", lineHeight: 1.5 }}>
                 {item.label}
               </Typography>
             </Box>
